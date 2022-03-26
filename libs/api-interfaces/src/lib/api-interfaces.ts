@@ -1,3 +1,3 @@
-export interface Message {
-  message: string;
-}
+import { Site } from '@prisma/client'
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
+export interface SiteEntity extends Site {}

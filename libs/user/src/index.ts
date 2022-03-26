@@ -10,3 +10,7 @@ export {
   loginRequested,
   logoutRequested,
 } from './lib/state/actions/user.events';
+
+export {
+  loginUser
+} from './lib/state/actions/user.commands'

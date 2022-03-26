@@ -1,4 +1,7 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
+import { selectUserLoggedIn } from '@camping/user';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'camping-greeting',
@@ -6,4 +9,13 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
   styleUrls: ['./greeting.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class GreetingComponent {}
+export class GreetingComponent implements OnInit {
+
+  isLoggedIn$!: Observable<boolean>;
+
+  constructor(private store:Store) {}
+
+  ngOnInit(): void {
+      this.isLoggedIn$ = this.store.select(selectUserLoggedIn);
+  }
+}

@@ -6,7 +6,7 @@
       <a routerLink="/sites">
         <camping-ui-hero-button>See Our Campsites</camping-ui-hero-button>
       </a>
-      <a [routerLink]="['..', 'user', 'login']">
+      <a [routerLink]="['..', 'user', 'login']" *ngIf="!(isLoggedIn$ | async)">
         <camping-ui-hero-button
           >Create an Account or Log In</camping-ui-hero-button
         >

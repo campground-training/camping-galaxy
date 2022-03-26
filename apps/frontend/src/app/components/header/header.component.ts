@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-// import { selectUserLoggedIn, selectUserPreferredUserName } from '@camping/user';
+import { selectUserLoggedIn, selectUserPreferredUserName } from '@camping/user';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
@@ -15,7 +15,7 @@ export class HeaderComponent implements OnInit {
   constructor(private store: Store) {}
 
   ngOnInit(): void {
-    // this.loggedIn$ = this.store.select(selectUserLoggedIn);
-    // this.userName$ = this.store.select(selectUserPreferredUserName);
+    this.loggedIn$ = this.store.select(selectUserLoggedIn);
+    this.userName$ = this.store.select(selectUserPreferredUserName);
   }
 }

@@ -14,4 +14,9 @@ datasource db {
 model Site {
   id String @id @default(cuid())
   name String
+  description String
+  hasWater Boolean @default(false)
+  hasElectrical Boolean @default(false)
+  hasLakefront Boolean @default(false)
+  hasRvParking Boolean @default(false)
 }

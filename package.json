@@ -9,6 +9,9 @@
     "build": "nx build",
     "test": "nx test"
   },
+  "prisma": {
+    "seed": "ts-node seed.ts"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~13.2.0",

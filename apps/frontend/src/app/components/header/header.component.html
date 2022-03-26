@@ -1,0 +1,31 @@
+<header>
+  <div class="site-name">
+    <i class="las la-tree"></i>
+    <span>Let's Go Camping!</span>
+  </div>
+  <nav class="nav">
+    <ul>
+      <li>
+        <a routerLink="/home" [routerLinkActive]="['active']">Home</a>
+      </li>
+      <li>
+        <a routerLink="/sites" [routerLinkActive]="['active']">Campsites</a>
+      </li>
+      <li>
+        <a routerLink="/reservations" [routerLinkActive]="['active']"
+          >Reservations</a
+        >
+      </li>
+      <li *ngIf="loggedIn$ | async">
+        <a routerLink="/user" [routerLinkActive]="['active']">{{
+          userName$ | async
+        }}</a>
+      </li>
+      <li *ngIf="!(loggedIn$ | async)">
+        <a routerLink="/auth" [routerLinkActive]="['active']"
+          >Sign In Or Create An Account</a
+        >
+      </li>
+    </ul>
+  </nav>
+</header>

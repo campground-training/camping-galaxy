@@ -1,0 +1,27 @@
+button.primary {
+  color: white;
+  font-size: 1.1rem;
+  font-family: inherit;
+  background-color: var(--spanish-viridian);
+  padding: 0.5rem 1rem;
+  border: 0;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+button.secondary {
+  color: var(--spanish-viridian);
+  font-size: 1.1rem;
+  font-family: inherit;
+  background-color: var(--white-color);
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--spanish-viridian);
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button.secondary:hover {
+  color: var(--white-color);
+  background-color: var(--spanish-viridian);
+}

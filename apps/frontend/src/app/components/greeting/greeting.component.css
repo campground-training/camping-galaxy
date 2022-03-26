@@ -1,0 +1,40 @@
+.main-div {
+  background: url('https://source.unsplash.com/K9olx8OF36A') no-repeat center
+    center fixed;
+  background-size: cover;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.greeting h1 {
+  text-align: center;
+}
+
+.greeting {
+  background-color: var(--white-color);
+  padding: 2rem;
+  border-radius: 2rem;
+  opacity: 0.95;
+  width: 30rem;
+}
+
+.greeting section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.greeting section .primary {
+  max-width: 10rem;
+  opacity: 1;
+}
+
+.greeting h2 {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+}

@@ -1,1 +1,27 @@
-/* You can add global styles to this file, and also import other style files */
+/* Jeff Added the Fonts Below. They Probably Need Changed */
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,700;0,800;0,900;1,600&display=swap');
+:root {
+  --primary-color: #248363;
+  --secondary-color: #636363;
+  --white-color: #ffffff;
+  --black-color: #000000;
+
+  --spanish-viridian: #248363ff;
+  --jet: #343330ff;
+  --brown: #7e5920ff;
+  --fulvous: #dc851fff;
+  --yellow-orange: #ffa737ff;
+
+  font-family: 'Barlow', sans-serif; /* Jeff Added This, Too. He is bad and should not be trusted with UI */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}

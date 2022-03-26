@@ -1,13 +1,22 @@
-import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Message } from '@camping-galaxy/api-interfaces';
-
+import { Component, OnInit } from '@angular/core';
+import { Site } from '@prisma/client';
+import { OidcSecurityService } from 'angular-auth-oidc-client';
+import { map, Observable } from 'rxjs';
 @Component({
-  selector: 'camping-galaxy-root',
+  selector: 'camping-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent {
-  hello$ = this.http.get<Message>('/api/hello');
-  constructor(private http: HttpClient) {}
+export class AppComponent implements OnInit {
+  constructor(private oidcService: OidcSecurityService) {}
+
+  ngOnInit(): void {
+    this.oidcService
+      .checkAuth()
+      .subscribe(({ isAuthenticated, userData, accessToken }) => {
+        console.log('app authenticated', isAuthenticated);
+        console.log(`Current access token is '${accessToken}'`);
+      });
+  }
 }

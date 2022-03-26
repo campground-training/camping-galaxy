@@ -1,0 +1,16 @@
+<div class="main-div">
+  <div class="greeting">
+    <h1>Need a Break?</h1>
+    <section>
+      <h2>Plan Your Next Adventure with Campground!</h2>
+      <a routerLink="/sites">
+        <camping-ui-hero-button>See Our Campsites</camping-ui-hero-button>
+      </a>
+      <a [routerLink]="['..', 'user', 'login']">
+        <camping-ui-hero-button
+          >Create an Account or Log In</camping-ui-hero-button
+        >
+      </a>
+    </section>
+  </div>
+</div>

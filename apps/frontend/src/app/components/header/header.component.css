@@ -1,0 +1,68 @@
+h1 {
+  margin: 0;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 300;
+}
+
+p {
+  line-height: 1.8;
+}
+
+.site-name > i {
+  font-size: 2.5rem;
+}
+
+.site-name > span {
+  font-size: 1.9rem;
+  font-weight: 800 ; /* Jeff Did This*/
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+header {
+  background-color: var(--white-color);
+  color: var(--primary-color);
+  box-shadow: 0 0 7px 0 lightgray;
+  padding: 0.5rem 3rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav > ul {
+  display: flex;
+  height: 100%;
+  list-style-type: none;
+  gap: 1rem;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.nav li {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
+.nav li a {
+  text-decoration: none;
+  color: var(--black-color);
+  display: flex;
+  height: 100%;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.nav li a.active {
+  background-color: rgb(238, 238, 238);
+  border-radius: 1rem;
+}
+
+.nav li a:hover {
+  background-color: rgb(238, 238, 238);
+  border-radius: 1rem;
+}

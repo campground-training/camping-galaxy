@@ -15,9 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@camping-galaxy/api-interfaces": ["libs/api-interfaces/src/index.ts"],
-      "@camping-galaxy/api-sites": ["libs/api-sites/src/index.ts"],
-      "@camping-galaxy/sites": ["libs/sites/src/index.ts"],
+      "@camping/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@camping/api-sites": ["libs/api-sites/src/index.ts"],
+      "@camping/sites": ["libs/sites/src/index.ts"],
       "@camping/ui": ["libs/ui/src/index.ts"],
       "@camping/user": ["libs/user/src/index.ts"]
     }

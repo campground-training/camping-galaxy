@@ -3,7 +3,7 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
-import { ApiSitesModule} from '@camping-galaxy/api-sites'
+import { ApiSitesModule} from '@camping/api-sites'
 @Module({
   imports: [ApiSitesModule],
   controllers: [AppController],

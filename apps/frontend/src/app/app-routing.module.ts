@@ -10,7 +10,10 @@ const routes: Routes = [
         path: 'greeting',
         component: GreetingComponent,
       },
-
+      {
+        path: 'sites',
+        loadChildren: ()=> import('@camping/sites').then(m => m.SitesModule)
+      },
       {
         path: '**',
         redirectTo: 'greeting',

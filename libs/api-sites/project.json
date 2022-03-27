@@ -1,0 +1,22 @@
+{
+  "root": "libs/api-sites",
+  "sourceRoot": "libs/api-sites/src",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/api-sites/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/api-sites"],
+      "options": {
+        "jestConfig": "libs/api-sites/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

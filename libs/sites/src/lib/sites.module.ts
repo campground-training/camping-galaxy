@@ -9,6 +9,8 @@ import { EffectsModule } from '@ngrx/effects';
 import { SitesFeatureEffects } from './state/effects/feature.effects';
 import { HttpClientModule } from '@angular/common/http';
 import { SiteEffects } from './state/effects/site.effects';
+import { ListContainerComponent } from './components/list-container/list-container.component';
+import { FilterComponent } from './components/filter/filter.component';
 const routes: Routes = [
   {
     path: '',
@@ -16,7 +18,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: ListComponent,
+        component: ListContainerComponent,
       },
     ],
   },
@@ -30,6 +32,6 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     EffectsModule.forFeature([SitesFeatureEffects, SiteEffects]),
   ],
-  declarations: [SitesComponent, ListComponent],
+  declarations: [SitesComponent, ListComponent, ListContainerComponent, FilterComponent],
 })
 export class SitesModule {}

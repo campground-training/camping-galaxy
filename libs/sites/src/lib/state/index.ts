@@ -39,34 +39,6 @@ export const selectSiteList = createSelector(
       );
     }
 
-    // const hasWaterSites = sites.filter((s) => s.hasWater === filter.hasWater);
-    // const hasElectricalSites = sites.filter(
-    //   (s) => s.hasElectrical === filter.hasElectricity
-    // );
-    // const hasLakefrontSites = sites.filter(
-    //   (s) => s.hasLakefront === filter.hasLakefront
-    // );
-    // const hasRvParkingSites = sites.filter(
-    //   (s) => s.hasRvParking === filter.hasRvParking
-    // );
-
-    // const union = [
-    //   ...hasWaterSites,
-    //   ...hasElectricalSites,
-    //   ...hasLakefrontSites,
-    //   ...hasRvParkingSites,
-    // ];
-
-    // const result: SiteEntity[] = [];
-    // union.forEach((s) => {
-    //   if (!result.some((c) => c.id === s.id)) {
-    //     result.push(s);
-    //   }
-    // });
-
-    // if they want lakefront and rvparking,
-    // maybe get all the sites and just filter out the ones they DON'T Want.
-    // so from all the sites, just make sure you return the ones at a minimum that have lakefront and rvparking
     const matches: SiteEntity[] = [];
 
     sites.forEach((s) => {
@@ -75,7 +47,6 @@ export const selectSiteList = createSelector(
       }
     });
 
-    // results have to the
     return matches;
   }
 );

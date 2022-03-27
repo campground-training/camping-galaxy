@@ -1,0 +1,73 @@
+.card {
+  margin-top: 2rem;
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+}
+/* .campsite-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 3rem 5rem;
+} */
+
+.campsite-card {
+  /* width: 40rem;
+  min-width: 25rem; */
+  box-shadow: 0 0 7px 0 lightgray;
+  /* flex: 1; */
+  transition: 0.3s;
+}
+
+.campsite-card:hover {
+  box-shadow: 0 0 7px 0 grey;
+}
+
+.campsite-card img {
+  width: 100%;
+}
+
+.site-header {
+  margin: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px dotted var(--primary-color);
+}
+.site-header .site-name {
+  font-size: 1.5rem;
+}
+
+.campsite-card-body {
+  padding: 0 1rem;
+  min-height: 9rem;
+}
+
+.campsite-card-body h3 {
+  font-size: 1.1rem;
+}
+
+.campsite-card-body ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+}
+
+.campsite-card-body li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.campsite-card-body li i {
+  font-size: 3rem;
+}
+
+.campsite-card-footer {
+  display: flex;
+  justify-content: center;
+  padding: 0 1rem 1rem;
+}

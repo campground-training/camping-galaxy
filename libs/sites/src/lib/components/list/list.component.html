@@ -1,0 +1,42 @@
+<ul *ngIf="sites$ | async as sites" class="wrapper">
+  <section *ngFor="let site of sites" class="campsite-card">
+    <img
+      *ngIf="!site.hasRvParking"
+      src="https://source.unsplash.com/RMicIhNOOIg"
+      alt="text here"
+    />
+    <img
+      *ngIf="site.hasRvParking"
+      src="https://source.unsplash.com/wMpVjul7Mqw"
+      alt="text here"
+    />
+    <div class="site-header">
+      <p class="site-name">{{ site.name }}</p>
+      <p>{{ site.description }}</p>
+    </div>
+    <div class="campsite-card-body">
+      <h3>Features</h3>
+      <div *ngIf="!site.hasElectrical && !site.hasWater && !site.hasRvParking">
+        <p>
+          This is a primitive site. Best for experienced campers. Showers,
+          water, and bathrooms are available nearby.
+        </p>
+      </div>
+      <ul>
+        <li *ngIf="site.hasWater">
+          <i class="las la-shower"></i>Water Hookups
+        </li>
+        <li *ngIf="site.hasElectrical">
+          <i class="las la-plug"></i>Electrical Hookups
+        </li>
+        <li *ngIf="site.hasLakefront">
+          <i class="las la-water"></i>Lakefront Site
+        </li>
+        <li *ngIf="site.hasRvParking">
+          <i class="las la-parking"></i>RV Parking
+        </li>
+      </ul>
+    </div>
+    <div class="campsite-card-footer"></div>
+  </section>
+</ul>

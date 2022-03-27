@@ -1,1 +1,63 @@
-<p>filter works!</p>
+<div *ngIf="filter$ | async as f">
+  <ul class="filter-group">
+    <li>
+      <input
+        (change)="showAll()"
+        type="checkbox"
+        id="all"
+        [checked]="f.showAll"
+      /><label for="all">Show All</label>
+    </li>
+    <li>
+      <input
+        (change)="showWater()"
+        type="checkbox"
+        id="water"
+        [checked]="f.hasWater"
+      /><label for="water"> <i class="las la-shower"></i>Has Water</label>
+    </li>
+    <li>
+      <input
+        (change)="showElectricity()"
+        type="checkbox"
+        id="electricity"
+        [checked]="f.hasElectricity"
+      />
+      <label for="electricity">
+        <i class="las la-plug"></i>Has Electricity
+      </label>
+    </li>
+    <li>
+      <input
+        (change)="showLakeFront()"
+        type="checkbox"
+        id="lakefront"
+        [checked]="f.hasLakefront"
+      />
+      <label for="lakefront">
+        <i class="las la-water"></i>Is on the Lakefront</label
+      >
+    </li>
+    <li>
+      <input
+        (change)="showRvParking()"
+        type="checkbox"
+        id="rv"
+        [checked]="f.hasRvParking"
+      /><label for="rv"><i class="las la-parking"></i>RV Parking</label>
+    </li>
+    <li>
+      <input
+        (change)="showPrimitive()"
+        type="checkbox"
+        id="primitive"
+        [checked]="f.primitiveOnly"
+      /><label for="primitive"><i class="las la-leaf"></i>Primitive</label>
+    </li>
+    <li>
+      <span class="summary">
+        There are {{ count$ | async }} sites that match your criteria.
+      </span>
+    </li>
+  </ul>
+</div>

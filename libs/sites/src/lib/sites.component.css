@@ -1,0 +1,8 @@
+.site-feature-header {
+  margin: 2rem;
+}
+
+.site-feature-header > p {
+  font-size: 2rem;
+  font-weight: 800;
+}

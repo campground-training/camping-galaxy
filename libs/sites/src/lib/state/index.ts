@@ -39,18 +39,44 @@ export const selectSiteList = createSelector(
       );
     }
 
-    let filtered: SiteEntity[] = [];
-    filtered = filter.hasElectricity
-      ? sites.filter((s) => s.hasElectrical)
-      : filtered;
-    filtered = filter.hasWater ? sites.filter((s) => s.hasWater) : filtered;
-    filtered = filter.hasLakefront
-      ? sites.filter((s) => s.hasLakefront)
-      : filtered;
-    filtered = filter.hasRvParking
-      ? sites.filter((s) => s.hasRvParking)
-      : filtered;
-    return filtered;
+    // const hasWaterSites = sites.filter((s) => s.hasWater === filter.hasWater);
+    // const hasElectricalSites = sites.filter(
+    //   (s) => s.hasElectrical === filter.hasElectricity
+    // );
+    // const hasLakefrontSites = sites.filter(
+    //   (s) => s.hasLakefront === filter.hasLakefront
+    // );
+    // const hasRvParkingSites = sites.filter(
+    //   (s) => s.hasRvParking === filter.hasRvParking
+    // );
+
+    // const union = [
+    //   ...hasWaterSites,
+    //   ...hasElectricalSites,
+    //   ...hasLakefrontSites,
+    //   ...hasRvParkingSites,
+    // ];
+
+    // const result: SiteEntity[] = [];
+    // union.forEach((s) => {
+    //   if (!result.some((c) => c.id === s.id)) {
+    //     result.push(s);
+    //   }
+    // });
+
+    // if they want lakefront and rvparking,
+    // maybe get all the sites and just filter out the ones they DON'T Want.
+    // so from all the sites, just make sure you return the ones at a minimum that have lakefront and rvparking
+    const matches: SiteEntity[] = [];
+
+    sites.forEach((s) => {
+      if (matchesCriteria(s, filter)) {
+        matches.push(s);
+      }
+    });
+
+    // results have to the
+    return matches;
   }
 );
 
@@ -60,3 +86,36 @@ export const selectNumberOfFilteredSites = createSelector(
   selectSiteList,
   (s) => s.length
 );
+
+function matchesCriteria(site: SiteEntity, filter: fromFilter.FilterState) {
+  interface MatchCriteria {
+    hasElectrical: boolean | null;
+    hasLakefront: boolean | null;
+    hasRvParking: boolean | null;
+    hasWater: boolean | null;
+  }
+  const matches: MatchCriteria = {
+    hasElectrical: null,
+    hasLakefront: null,
+    hasRvParking: null,
+    hasWater: null,
+  };
+  if (filter.hasElectricity === true) {
+    matches.hasElectrical = site.hasElectrical;
+  }
+  if (filter.hasLakefront === true) {
+    matches.hasLakefront = site.hasLakefront;
+  }
+  if (filter.hasRvParking === true) {
+    matches.hasRvParking = site.hasRvParking;
+  }
+  if (filter.hasWater === true) {
+    matches.hasWater = site.hasWater;
+  }
+  return (
+    matches.hasElectrical === filter.hasElectricity &&
+    matches.hasLakefront === filter.hasLakefront &&
+    matches.hasRvParking === filter.hasRvParking &&
+    matches.hasWater === filter.hasWater
+  );
+}

@@ -10,7 +10,7 @@
     "test": "nx test"
   },
   "prisma": {
-    "seed": "ts-node seed.ts"
+    "seed": "ts-node prisma/seed.ts"
   },
   "private": true,
   "dependencies": {

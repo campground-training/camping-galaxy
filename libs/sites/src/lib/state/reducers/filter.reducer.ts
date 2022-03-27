@@ -24,17 +24,17 @@ export const reducer = createReducer(
   on(commands.filterShowPrimitive, () => ({
     showAll: false,
     primitiveOnly: true,
-    hasWater: false,
-    hasElectricity: false,
-    hasLakefront: false,
-    hasRvParking: false,
+    hasWater: null,
+    hasElectricity: null,
+    hasLakefront: null,
+    hasRvParking: null,
   })),
   on(commands.filterShowElectricity, (s) => {
     const state = {
       ...s,
       showAll: false,
       primitiveOnly: false,
-      hasElectricity: !s.hasElectricity,
+      hasElectricity: s.hasElectricity === true ? null : true,
     };
     return resetShowAll(state);
   }),
@@ -43,7 +43,7 @@ export const reducer = createReducer(
       ...s,
       showAll: false,
       primitiveOnly: false,
-      hasLakefront: !s.hasLakefront,
+      hasLakefront: s.hasLakefront === true ? null : true,
     };
     return resetShowAll(state);
   }),
@@ -52,7 +52,7 @@ export const reducer = createReducer(
       ...s,
       showAll: false,
       primitiveOnly: false,
-      hasWater: !s.hasWater,
+      hasWater: s.hasWater === true ? null : true,
     };
     return resetShowAll(state);
   }),
@@ -61,7 +61,7 @@ export const reducer = createReducer(
       ...s,
       showAll: false,
       primitiveOnly: false,
-      hasRvParking: !s.hasRvParking,
+      hasRvParking: s.hasRvParking === true ? null : true,
     };
     return resetShowAll(state);
   })

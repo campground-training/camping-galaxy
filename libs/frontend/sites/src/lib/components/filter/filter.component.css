@@ -34,3 +34,7 @@ ul.filter-group {
 .filter-group i {
   margin-right: 0.3rem;
 }
+
+.summary {
+  float: none;
+}

@@ -46,7 +46,13 @@ export const selectFilter = selectFilterBranch;
 
 export const selectNumberOfFilteredSites = createSelector(
   selectSiteList,
-  (s) => s.length
+  (s) => ({
+    total: s.length,
+    withWater: s.filter((f) => f.hasElectrical === true).length,
+    withElectrical: s.filter((f) => f.hasElectrical === true).length,
+    hasRvParking: s.filter((f) => f.hasRvParking === true).length,
+    hasLakefront: s.filter((f) => f.hasLakefront === true).length,
+  })
 );
 
 function matchesCriteria(site: SiteEntity, filter: fromFilter.FilterState) {

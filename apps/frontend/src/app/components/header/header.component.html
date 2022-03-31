@@ -21,7 +21,7 @@
           userName$ | async
         }}</a>
       </li>
-      <li *ngIf="!(loggedIn$ | async)">
+      <li *ngIf="(loggedIn$ | async) === false">
         <a routerLink="/auth" [routerLinkActive]="['active']"
           >Sign In Or Create An Account</a
         >

@@ -1,6 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { Actions, createEffect, ofType } from '@ngrx/effects';
-import * as events from '../actions/user.events';
+import { Actions } from '@ngrx/effects';
 @Injectable()
 export class UserEffects {
   constructor(private actions$: Actions) {}

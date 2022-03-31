@@ -12,7 +12,13 @@ import * as commands from '../../state/actions/filter.commands';
 })
 export class FilterComponent implements OnInit {
   filter$!: Observable<FilterState>;
-  count$!: Observable<number>;
+  count$!: Observable<{
+    total: number;
+    withWater: number;
+    withElectrical: number;
+    hasRvParking: number;
+    hasLakefront: number;
+  }>;
   constructor(private store: Store) {}
 
   ngOnInit(): void {

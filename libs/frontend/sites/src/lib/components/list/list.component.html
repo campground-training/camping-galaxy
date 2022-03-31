@@ -1,4 +1,8 @@
-<ul *ngIf="sites$ | async as sites" class="wrapper">
+<ul
+  [@fadeAnimation]="changeCount"
+  *ngIf="sites$ | async as sites"
+  class="wrapper"
+>
   <section *ngFor="let site of sites" class="campsite-card">
     <img
       *ngIf="!site.hasRvParking"

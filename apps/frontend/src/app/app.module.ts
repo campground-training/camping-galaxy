@@ -8,10 +8,11 @@ import { HeaderComponent } from './components/header/header.component';
 import { GreetingComponent } from './components/greeting/greeting.component';
 import { AppFeaturesModule } from './app-features.module';
 import { KeyCloakAuthModule } from './app-auth.module';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [AppComponent, HeaderComponent, GreetingComponent],
   imports: [
+    BrowserAnimationsModule,
     BrowserModule,
     HttpClientModule,
     NgrxAppModule,

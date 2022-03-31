@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/frontend/sites",
+  "sourceRoot": "libs/frontend/sites/src",
+  "prefix": "camping-galaxy",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/frontend/sites"],
+      "options": {
+        "jestConfig": "libs/frontend/sites/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/frontend/sites/src/**/*.ts",
+          "libs/frontend/sites/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

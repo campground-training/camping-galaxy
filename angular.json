@@ -6,8 +6,8 @@
     "api-sites": "libs/api-sites",
     "frontend": "apps/frontend",
     "frontend-e2e": "apps/frontend-e2e",
-    "sites": "libs/sites",
-    "ui": "libs/ui",
-    "user": "libs/user"
+    "frontend-sites": "libs/frontend/sites",
+    "frontend-ui": "libs/frontend/ui",
+    "frontend-user": "libs/frontend/user"
   }
 }

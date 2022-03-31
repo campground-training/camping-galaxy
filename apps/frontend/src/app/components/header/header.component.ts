@@ -1,5 +1,9 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { selectUserLoggedIn, selectUserPreferredUserName } from '@camping/user';
+import {
+  selectUserLoggedIn,
+  selectUserPreferredUserName,
+} from '@camping-galaxy/frontend/user';
+
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 

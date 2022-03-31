@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { loginRequested } from '@camping/user';
+
 import { tap } from 'rxjs';
 import { OidcSecurityService } from 'angular-auth-oidc-client';
+import { loginRequested } from '@camping-galaxy/frontend/user';
 @Injectable()
 export class AuthEffects {
   login$ = createEffect(

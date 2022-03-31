@@ -12,7 +12,8 @@ const routes: Routes = [
       },
       {
         path: 'sites',
-        loadChildren: ()=> import('@camping/sites').then(m => m.SitesModule)
+        loadChildren: () =>
+          import('@camping-galaxy/frontend/sites').then((m) => m.SitesModule),
       },
       {
         path: '**',

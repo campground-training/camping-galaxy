@@ -1,5 +1,6 @@
 import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
-import { selectUserLoggedIn } from '@camping/user';
+import { selectUserLoggedIn } from '@camping-galaxy/frontend/user';
+
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
@@ -10,12 +11,11 @@ import { Observable } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class GreetingComponent implements OnInit {
-
   isLoggedIn$!: Observable<boolean>;
 
-  constructor(private store:Store) {}
+  constructor(private store: Store) {}
 
   ngOnInit(): void {
-      this.isLoggedIn$ = this.store.select(selectUserLoggedIn);
+    this.isLoggedIn$ = this.store.select(selectUserLoggedIn);
   }
 }

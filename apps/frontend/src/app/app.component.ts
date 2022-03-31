@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { loginUser } from '@camping/user';
+import { loginUser } from '@camping-galaxy/frontend/user';
+
 import { Store } from '@ngrx/store';
 import { OidcSecurityService } from 'angular-auth-oidc-client';
 import { appStarted } from './state/actions/app.events';

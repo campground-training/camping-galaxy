@@ -1,63 +1,157 @@
 <div *ngIf="filter$ | async as f">
   <ul class="filter-group">
     <li>
-      <input
-        (change)="showAll()"
-        type="checkbox"
-        id="all"
-        [checked]="f.showAll"
-      /><label for="all">Show All</label>
+      <label for="water"> <i class="las la-shower"></i>Need Water?</label>
+      <div class="option-group">
+        <label for="water-either">
+          <input
+            (change)="showWater(null)"
+            type="checkbox"
+            id="water-either"
+            [checked]="f.hasWater === null"
+          />
+          Either Way</label
+        >
+      </div>
+      <div class="option-group">
+        <label for="water-needed">
+          <input
+            (change)="showWater(true)"
+            type="checkbox"
+            id="water-needed"
+            [checked]="f.hasWater === true"
+          />
+          Must Have</label
+        >
+      </div>
+      <div class="option-group">
+        <label for="water-unwanted">
+          <input
+            (change)="showWater(false)"
+            type="checkbox"
+            id="water-unwanted"
+            [checked]="f.hasWater === false"
+          />
+          Don't Want</label
+        >
+      </div>
     </li>
     <li>
-      <input
-        (change)="showWater()"
-        type="checkbox"
-        id="water"
-        [checked]="f.hasWater"
-      /><label for="water"> <i class="las la-shower"></i>Has Water</label>
-    </li>
-    <li>
-      <input
-        (change)="showElectricity()"
-        type="checkbox"
-        id="electricity"
-        [checked]="f.hasElectricity"
-      />
       <label for="electricity">
-        <i class="las la-plug"></i>Has Electricity
-      </label>
-    </li>
-    <li>
-      <input
-        (change)="showLakeFront()"
-        type="checkbox"
-        id="lakefront"
-        [checked]="f.hasLakefront"
-      />
-      <label for="lakefront">
-        <i class="las la-water"></i>Is on the Lakefront</label
+        <i class="las la-plug"></i>Need Electricity?</label
       >
+      <div class="option-group">
+        <label for="electricity-either">
+          <input
+            (change)="showElectricity(null)"
+            type="checkbox"
+            id="electricity-either"
+            [checked]="f.hasElectricity === null"
+          />
+          Either Way</label
+        >
+      </div>
+      <div class="option-group">
+        <label for="electricity-needed">
+          <input
+            (change)="showElectricity(true)"
+            type="checkbox"
+            id="electricity-needed"
+            [checked]="f.hasElectricity === true"
+          />
+          Must Have</label
+        >
+      </div>
+      <div class="option-group">
+        <label for="electricity-unwanted">
+          <input
+            (change)="showElectricity(false)"
+            type="checkbox"
+            id="electricity-unwanted"
+            [checked]="f.hasElectricity === false"
+          />
+          Don't Want</label
+        >
+      </div>
     </li>
     <li>
-      <input
-        (change)="showRvParking()"
-        type="checkbox"
-        id="rv"
-        [checked]="f.hasRvParking"
-      /><label for="rv"><i class="las la-parking"></i>RV Parking</label>
+      <label for="rvparking">
+        <i class="las la-parking"></i>Need RV Parking?</label
+      >
+      <div class="option-group">
+        <label for="rvparking-either">
+          <input
+            (change)="showRvParking(null)"
+            type="checkbox"
+            id="rvparking-either"
+            [checked]="f.hasRvParking === null"
+          />
+          Either Way</label
+        >
+      </div>
+      <div class="option-group">
+        <label for="rvparking-needed">
+          <input
+            (change)="showRvParking(true)"
+            type="checkbox"
+            id="rvparking-needed"
+            [checked]="f.hasRvParking === true"
+          />
+          Must Have</label
+        >
+      </div>
+      <div class="option-group">
+        <label for="rvparking-unwanted">
+          <input
+            (change)="showRvParking(false)"
+            type="checkbox"
+            id="rvparking-unwanted"
+            [checked]="f.hasRvParking === false"
+          />
+          Don't Want</label
+        >
+      </div>
     </li>
     <li>
-      <input
-        (change)="showPrimitive()"
-        type="checkbox"
-        id="primitive"
-        [checked]="f.primitiveOnly"
-      /><label for="primitive"><i class="las la-leaf"></i>Primitive</label>
-    </li>
-    <li>
-      <span class="summary">
-        There are {{ count$ | async }} sites that match your criteria.
-      </span>
+      <label for="lakefront">
+        <i class="las la-water"></i>Lakefront Site?</label
+      >
+      <div class="option-group">
+        <label for="lakefront-either">
+          <input
+            (change)="showLakefront(null)"
+            type="checkbox"
+            id="lakefront-either"
+            [checked]="f.hasLakefront === null"
+          />
+          Either Way</label
+        >
+      </div>
+      <div class="option-group">
+        <label for="lakefront-needed">
+          <input
+            (change)="showLakefront(true)"
+            type="checkbox"
+            id="lakefront-needed"
+            [checked]="f.hasLakefront === true"
+          />
+          Must Have</label
+        >
+      </div>
+      <div class="option-group">
+        <label for="lakefront-unwanted">
+          <input
+            (change)="showLakefront(false)"
+            type="checkbox"
+            id="lakefront-unwanted"
+            [checked]="f.hasLakefront === false"
+          />
+          Don't Want</label
+        >
+      </div>
     </li>
   </ul>
+  <span class="summary">
+    There are {{ count$ | async }} sites that match your criteria.
+  </span>
 </div>

@@ -1,4 +1,4 @@
-import { createAction } from '@ngrx/store';
+import { createAction, props } from '@ngrx/store';
 
 export const filterShowAll = createAction('[sites filter command] show all');
 
@@ -7,17 +7,21 @@ export const filterShowPrimitive = createAction(
 );
 
 export const filterShowElectricity = createAction(
-  '[sites filter command] show electricity'
+  '[sites filter command] show electricity',
+  props<{ payload: boolean | null }>()
 );
 
 export const filterShowWater = createAction(
-  '[sites filter command] show water'
+  '[sites filter command] show water',
+  props<{ payload: boolean | null }>()
 );
 
 export const filterShowLakefront = createAction(
-  '[sites filter command] show lakefront'
+  '[sites filter command] show lakefront',
+  props<{ payload: boolean | null }>()
 );
 
 export const filterShowRvParking = createAction(
-  '[sites filter command] show rv parking'
+  '[sites filter command] show rv parking',
+  props<{ payload: boolean | null }>()
 );

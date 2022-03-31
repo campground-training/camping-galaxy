@@ -29,39 +29,39 @@ export const reducer = createReducer(
     hasLakefront: null,
     hasRvParking: null,
   })),
-  on(commands.filterShowElectricity, (s) => {
+  on(commands.filterShowElectricity, (s, a) => {
     const state = {
       ...s,
       showAll: false,
       primitiveOnly: false,
-      hasElectricity: s.hasElectricity === true ? null : true,
+      hasElectricity: a.payload,
     };
     return resetShowAll(state);
   }),
-  on(commands.filterShowLakefront, (s) => {
+  on(commands.filterShowLakefront, (s, a) => {
     const state = {
       ...s,
       showAll: false,
       primitiveOnly: false,
-      hasLakefront: s.hasLakefront === true ? null : true,
+      hasLakefront: a.payload,
     };
     return resetShowAll(state);
   }),
-  on(commands.filterShowWater, (s) => {
+  on(commands.filterShowWater, (s, a) => {
     const state = {
       ...s,
       showAll: false,
       primitiveOnly: false,
-      hasWater: s.hasWater === true ? null : true,
+      hasWater: a.payload,
     };
     return resetShowAll(state);
   }),
-  on(commands.filterShowRvParking, (s) => {
+  on(commands.filterShowRvParking, (s, a) => {
     const state = {
       ...s,
       showAll: false,
       primitiveOnly: false,
-      hasRvParking: s.hasRvParking === true ? null : true,
+      hasRvParking: a.payload,
     };
     return resetShowAll(state);
   })

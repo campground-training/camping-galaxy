@@ -30,15 +30,6 @@ export const selectSiteList = createSelector(
   selectAllSitesArray,
   selectFilterBranch,
   (sites, filter) => {
-    if (filter.showAll) {
-      return sites;
-    }
-    if (filter.primitiveOnly) {
-      return sites.filter(
-        (s) => !s.hasElectrical && !s.hasRvParking && !s.hasWater
-      );
-    }
-
     const matches: SiteEntity[] = [];
 
     sites.forEach((s) => {
@@ -66,27 +57,20 @@ function matchesCriteria(site: SiteEntity, filter: fromFilter.FilterState) {
     hasWater: boolean | null;
   }
   const matches: MatchCriteria = {
-    hasElectrical: null,
-    hasLakefront: null,
-    hasRvParking: null,
-    hasWater: null,
+    hasElectrical:
+      site.hasElectrical === filter.hasElectricity ||
+      filter.hasElectricity === null,
+    hasLakefront:
+      site.hasLakefront === filter.hasLakefront || filter.hasLakefront === null,
+    hasRvParking:
+      site.hasRvParking === filter.hasRvParking || filter.hasRvParking === null,
+    hasWater: site.hasWater === filter.hasWater || filter.hasWater === null,
   };
-  if (filter.hasElectricity === true) {
-    matches.hasElectrical = site.hasElectrical;
-  }
-  if (filter.hasLakefront === true) {
-    matches.hasLakefront = site.hasLakefront;
-  }
-  if (filter.hasRvParking === true) {
-    matches.hasRvParking = site.hasRvParking;
-  }
-  if (filter.hasWater === true) {
-    matches.hasWater = site.hasWater;
-  }
+
   return (
-    matches.hasElectrical === filter.hasElectricity &&
-    matches.hasLakefront === filter.hasLakefront &&
-    matches.hasRvParking === filter.hasRvParking &&
-    matches.hasWater === filter.hasWater
+    matches.hasElectrical &&
+    matches.hasLakefront &&
+    matches.hasRvParking &&
+    matches.hasWater
   );
 }

@@ -27,18 +27,18 @@ export class FilterComponent implements OnInit {
     this.store.dispatch(commands.filterShowPrimitive());
   }
 
-  showElectricity() {
-    this.store.dispatch(commands.filterShowElectricity());
+  showElectricity(payload: boolean | null) {
+    this.store.dispatch(commands.filterShowElectricity({ payload }));
   }
 
-  showWater() {
-    this.store.dispatch(commands.filterShowWater());
+  showWater(payload: boolean | null) {
+    this.store.dispatch(commands.filterShowWater({ payload }));
   }
 
-  showLakeFront() {
-    this.store.dispatch(commands.filterShowLakefront());
+  showLakefront(payload: boolean | null) {
+    this.store.dispatch(commands.filterShowLakefront({ payload }));
   }
-  showRvParking() {
-    this.store.dispatch(commands.filterShowRvParking());
+  showRvParking(payload: boolean | null) {
+    this.store.dispatch(commands.filterShowRvParking({ payload }));
   }
 }

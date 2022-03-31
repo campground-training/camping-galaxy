@@ -1,7 +1,13 @@
 ul.filter-group {
   list-style-type: none;
 }
-.filter-group {
+.option-group {
+  font-size: .8rem;
+  padding-left: 1rem;
+}
+
+.option-group.selected {
+  font-weight: bolder;
 }
 .filter-group li {
   float: left;
@@ -16,6 +22,9 @@ ul.filter-group {
   cursor: pointer;
 }
 
+.filter-group li {
+ display:block;
+}
 .filter-group:after {
   content: '';
   clear: both;

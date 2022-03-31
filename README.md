@@ -2,6 +2,10 @@
 
 Ok, this is getting somewhere. ;)
 
+## Status Stuff
+
+[![CI Build](https://github.com/campground-training/camping-galaxy/actions/workflows/nx-build.yml/badge.svg?branch=main)](https://github.com/campground-training/camping-galaxy/actions/workflows/nx-build.yml)
+
 ## Docker
 
 The only thing you'll need to run with docker right now is the KeyCloak auth server.

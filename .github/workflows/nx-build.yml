@@ -24,6 +24,7 @@ jobs:
         with:
           node-version: '16'
       - run: npm install
+      - run: npx nx affected --target=lint --parallel=3
       - run: npx nx affected --target=build --parallel=3
       - run: npx nx affected --target=test --parallel=2
   pr:
@@ -40,6 +41,7 @@ jobs:
         with:
           node-version: '16'
       - run: npm install
+      - run: npx nx affected --target=lint --parallel=3
       - run: npx nx affected --target=build --parallel=3
       - run: npx nx affected --target=test --parallel=2
       - name: Use Node.js ${{ matrix.node-version }}

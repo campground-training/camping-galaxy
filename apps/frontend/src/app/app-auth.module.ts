@@ -6,7 +6,7 @@ import { AuthModule, LogLevel } from 'angular-auth-oidc-client';
     AuthModule.forRoot({
       config: {
         authority:
-          'http://localhost:8080/auth/realms/camping-dev/.well-known/openid-configuration',
+          'https://auth.camping-training.com/auth/realms/camping-dev/.well-known/openid-configuration',
         redirectUrl: window.location.origin,
         postLogoutRedirectUri: window.location.origin,
         clientId: 'frontend',
